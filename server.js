@@ -6,6 +6,8 @@ const pug = require('pug');
 const app = express();
 
 fccTesting(app); //For FCC testing purposes
+const cors = require('cors');
+app.use(cors());
 app.use("/public", express.static(process.cwd() + "/public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
