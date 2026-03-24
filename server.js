@@ -7,6 +7,10 @@ const fccTesting = require('./freeCodeCamp/fcctesting.js');
 const app = express();
 
 fccTesting(app); //For FCC testing purposes
+app.use((req, res, next) => {
+  res.setHeader('ngrok-skip-browser-warning', 'true');
+  next();
+});
 app.use('/public', express.static(process.cwd() + '/public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
