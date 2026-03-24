@@ -7,6 +7,8 @@ const fccTesting = require('./freeCodeCamp/fcctesting.js');
 const app = express();
 
 fccTesting(app); //For FCC testing purposes
+const cors = require('cors');
+app.use(cors());
 app.use((req, res, next) => {
   res.setHeader('ngrok-skip-browser-warning', 'true');
   next();
