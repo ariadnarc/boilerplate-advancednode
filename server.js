@@ -4,12 +4,6 @@ const express = require('express');
 const myDB = require('./connection');
 const fccTesting = require('./freeCodeCamp/fcctesting.js');
 
-'use strict';
-require('dotenv').config();
-const express = require('express');
-const myDB = require('./connection');
-const fccTesting = require('./freeCodeCamp/fcctesting.js');
-
 const app = express();
 
 fccTesting(app); //For FCC testing purposes
